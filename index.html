@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FairHire AI — Unbiased Resume Screening</title>
+  <meta name="description" content="FairHire AI detects and mitigates bias in resumes before AI hiring systems evaluate them, promoting fair and inclusive hiring." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ───────── NAVBAR ───────── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" id="nav-logo-link">
+        <div class="logo-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span>FairHire<span class="logo-ai">AI</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="#how-it-works" class="nav-link" id="nav-how">How It Works</a>
+        <a href="#features" class="nav-link" id="nav-features">Features</a>
+        <a href="#analyzer" class="nav-link" id="nav-analyzer">Try It</a>
+        <a href="#analyzer" class="nav-cta" id="nav-cta-btn">Analyze Resume</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ───────── HERO ───────── -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="orb orb1"></div>
+      <div class="orb orb2"></div>
+      <div class="orb orb3"></div>
+      <div class="grid-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge" id="hero-badge">
+        <span class="badge-dot"></span>
+        Hack2Skill Solution Challenge 2026 — Unbiased AI Decision
+      </div>
+      <h1 class="hero-title" id="hero-title">
+        Eliminate Bias.<br />
+        <span class="gradient-text">Hire Fairly.</span>
+      </h1>
+      <p class="hero-desc" id="hero-desc">
+        FairHire AI detects gender, education, and location bias in resumes
+        before AI systems screen them — ensuring every candidate gets a fair shot.
+      </p>
+      <div class="hero-actions" id="hero-actions">
+        <a href="#analyzer" class="btn-primary" id="hero-try-btn">
+          <span>Try the Analyzer</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#how-it-works" class="btn-ghost" id="hero-learn-btn">Learn How It Works</a>
+      </div>
+      <div class="hero-stats" id="hero-stats">
+        <div class="stat">
+          <span class="stat-num">94%</span>
+          <span class="stat-label">Bias Detection Accuracy</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">3x</span>
+          <span class="stat-label">Fairer Candidate Pools</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">5s</span>
+          <span class="stat-label">Analysis Time</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual" id="hero-visual">
+      <div class="floating-card card-main" id="card-main">
+        <div class="card-header">
+          <div class="card-dot red"></div>
+          <div class="card-dot yellow"></div>
+          <div class="card-dot green"></div>
+          <span class="card-title">Resume Analysis</span>
+        </div>
+        <div class="card-body">
+          <div class="score-ring-wrap">
+            <svg class="score-ring" width="120" height="120" viewBox="0 0 120 120">
+              <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="10"/>
+              <circle id="score-circle-anim" cx="60" cy="60" r="50" fill="none" stroke="url(#scoreGrad)" stroke-width="10"
+                stroke-linecap="round" stroke-dasharray="314" stroke-dashoffset="180"
+                transform="rotate(-90 60 60)"/>
+              <defs>
+                <linearGradient id="scoreGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#7c3aed"/>
+                  <stop offset="100%" stop-color="#06b6d4"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <div class="score-inner">
+              <span class="score-num">73</span>
+              <span class="score-sub">Fairness</span>
+            </div>
+          </div>
+          <div class="bias-bars">
+            <div class="bias-row">
+              <span class="bias-label">Gender Bias</span>
+              <div class="bias-bar-wrap">
+                <div class="bias-bar" style="width:35%; background: linear-gradient(90deg,#ef4444,#f97316)"></div>
+              </div>
+              <span class="bias-pct warn">High</span>
+            </div>
+            <div class="bias-row">
+              <span class="bias-label">Education</span>
+              <div class="bias-bar-wrap">
+                <div class="bias-bar" style="width:55%; background: linear-gradient(90deg,#f97316,#eab308)"></div>
+              </div>
+              <span class="bias-pct medium">Med</span>
+            </div>
+            <div class="bias-row">
+              <span class="bias-label">Location</span>
+              <div class="bias-bar-wrap">
+                <div class="bias-bar" style="width:15%; background: linear-gradient(90deg,#22c55e,#16a34a)"></div>
+              </div>
+              <span class="bias-pct good">Low</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="floating-pill pill1" id="pill1">
+        <div class="pill-icon">⚠️</div>
+        <span>Gender-coded language detected</span>
+      </div>
+      <div class="floating-pill pill2" id="pill2">
+        <div class="pill-icon">✅</div>
+        <span>Skills-based evaluation ready</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── HOW IT WORKS ───────── -->
+  <section class="section how-section" id="how-it-works">
+    <div class="section-inner">
+      <div class="section-label">Process Flow</div>
+      <h2 class="section-title">How FairHire AI Works</h2>
+      <p class="section-desc">A transparent, step-by-step pipeline that eliminates bias before it influences decisions.</p>
+      <div class="steps-flow" id="steps-flow">
+        <div class="step-item" id="step1">
+          <div class="step-icon-wrap">
+            <div class="step-icon">📄</div>
+          </div>
+          <div class="step-content">
+            <h3>Resume Input</h3>
+            <p>Paste or upload resume text directly into the analyzer</p>
+          </div>
+          <div class="step-arrow">→</div>
+        </div>
+        <div class="step-item" id="step2">
+          <div class="step-icon-wrap">
+            <div class="step-icon">🔍</div>
+          </div>
+          <div class="step-content">
+            <h3>Text Extraction</h3>
+            <p>NLP engine parses the content and identifies sensitive patterns</p>
+          </div>
+          <div class="step-arrow">→</div>
+        </div>
+        <div class="step-item" id="step3">
+          <div class="step-icon-wrap">
+            <div class="step-icon">🧠</div>
+          </div>
+          <div class="step-content">
+            <h3>Bias Detection Engine</h3>
+            <p>Google Gemini AI + rule-based model scores each bias dimension</p>
+          </div>
+          <div class="step-arrow">→</div>
+        </div>
+        <div class="step-item" id="step4">
+          <div class="step-icon-wrap">
+            <div class="step-icon">📊</div>
+          </div>
+          <div class="step-content">
+            <h3>Fairness Report</h3>
+            <p>Receive a detailed score card with actionable suggestions</p>
+          </div>
+          <div class="step-arrow last-arrow">→</div>
+        </div>
+        <div class="step-item" id="step5">
+          <div class="step-icon-wrap step-icon-final">
+            <div class="step-icon">✅</div>
+          </div>
+          <div class="step-content">
+            <h3>Neutral Resume</h3>
+            <p>Apply fixes and submit a bias-free resume for fair evaluation</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── FEATURES ───────── -->
+  <section class="section features-section" id="features">
+    <div class="section-inner">
+      <div class="section-label">Capabilities</div>
+      <h2 class="section-title">What We Detect</h2>
+      <p class="section-desc">Our multi-dimensional bias detection covers all major sources of unfair screening.</p>
+      <div class="features-grid" id="features-grid">
+
+        <div class="feature-card" id="feat1">
+          <div class="feat-icon-wrap" style="background: linear-gradient(135deg,#7c3aed20,#7c3aed10);">
+            <span class="feat-icon">⚧</span>
+          </div>
+          <h3>Gender Bias Detection</h3>
+          <p>Identifies gendered pronouns, masculine/feminine coded words, and role stereotypes that disadvantage candidates.</p>
+          <div class="feat-tags">
+            <span class="tag">he/she/him/her</span>
+            <span class="tag">coded language</span>
+            <span class="tag">role stereotypes</span>
+          </div>
+        </div>
+
+        <div class="feature-card" id="feat2">
+          <div class="feat-icon-wrap" style="background: linear-gradient(135deg,#06b6d420,#06b6d410);">
+            <span class="feat-icon">🎓</span>
+          </div>
+          <h3>Education Bias</h3>
+          <p>Flags over-reliance on elite institution names that unfairly filter candidates with equivalent skills.</p>
+          <div class="feat-tags">
+            <span class="tag">IIT/NIT preference</span>
+            <span class="tag">Ivy League bias</span>
+            <span class="tag">degree gatekeeping</span>
+          </div>
+        </div>
+
+        <div class="feature-card" id="feat3">
+          <div class="feat-icon-wrap" style="background: linear-gradient(135deg,#f59e0b20,#f59e0b10);">
+            <span class="feat-icon">📍</span>
+          </div>
+          <h3>Location Bias</h3>
+          <p>Detects geographic preferences that may exclude qualified remote candidates from tier-2/3 cities.</p>
+          <div class="feat-tags">
+            <span class="tag">city preference</span>
+            <span class="tag">regional language</span>
+            <span class="tag">zip code bias</span>
+          </div>
+        </div>
+
+        <div class="feature-card" id="feat4">
+          <div class="feat-icon-wrap" style="background: linear-gradient(135deg,#ec489920,#ec489910);">
+            <span class="feat-icon">🔢</span>
+          </div>
+          <h3>Fairness Score</h3>
+          <p>Generates a 0–100 composite fairness score with visual breakdown of each bias category weight.</p>
+          <div class="feat-tags">
+            <span class="tag">0-100 scale</span>
+            <span class="tag">weighted score</span>
+            <span class="tag">visual report</span>
+          </div>
+        </div>
+
+        <div class="feature-card" id="feat5">
+          <div class="feat-icon-wrap" style="background: linear-gradient(135deg,#22c55e20,#22c55e10);">
+            <span class="feat-icon">✍️</span>
+          </div>
+          <h3>Neutral Suggestions</h3>
+          <p>Proposes specific, word-level rewrites to replace biased phrases with skill-neutral alternatives.</p>
+          <div class="feat-tags">
+            <span class="tag">word replacement</span>
+            <span class="tag">neutral language</span>
+            <span class="tag">context-aware</span>
+          </div>
+        </div>
+
+        <div class="feature-card" id="feat6">
+          <div class="feat-icon-wrap" style="background: linear-gradient(135deg,#f9731620,#f9731610);">
+            <span class="feat-icon">🔗</span>
+          </div>
+          <h3>Gemini AI Integration</h3>
+          <p>Powered by Google Gemini API for deep semantic understanding beyond simple keyword matching.</p>
+          <div class="feat-tags">
+            <span class="tag">Gemini API</span>
+            <span class="tag">semantic NLP</span>
+            <span class="tag">Google AI</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── ANALYZER ───────── -->
+  <section class="section analyzer-section" id="analyzer">
+    <div class="section-inner">
+      <div class="section-label">Live Demo</div>
+      <h2 class="section-title">Resume Bias Analyzer</h2>
+      <p class="section-desc">Paste any resume text below. Our bias detection engine will evaluate it instantly.</p>
+
+      <div class="analyzer-layout" id="analyzer-layout">
+        <!-- INPUT PANEL -->
+        <div class="analyzer-panel input-panel" id="input-panel">
+          <div class="panel-header">
+            <span class="panel-title">📄 Resume Input</span>
+            <div class="panel-actions">
+              <button class="sample-btn" id="load-sample-btn" onclick="loadSample()">Load Sample</button>
+              <button class="clear-btn" id="clear-input-btn" onclick="clearInput()">Clear</button>
+            </div>
+          </div>
+          <textarea
+            id="resume-input"
+            class="resume-textarea"
+            placeholder="Paste your resume text here...&#10;&#10;Example:&#10;John Smith, he is a strong leader who studied at IIT Delhi. He is looking for a role in Mumbai. He previously worked at Goldman Sachs where he led a team of 10 people..."
+            rows="14"
+          ></textarea>
+          <div class="char-count" id="char-count">0 characters</div>
+          <button class="analyze-btn" id="analyze-btn" onclick="analyzeResume()">
+            <span id="btn-text">🔍 Analyze for Bias</span>
+            <span id="btn-spinner" class="spinner hidden"></span>
+          </button>
+        </div>
+
+        <!-- OUTPUT PANEL -->
+        <div class="analyzer-panel output-panel" id="output-panel">
+          <div class="panel-header">
+            <span class="panel-title">📊 Bias Report</span>
+            <div id="overall-badge" class="overall-badge hidden"></div>
+          </div>
+
+          <!-- Placeholder state -->
+          <div class="placeholder-state" id="placeholder-state">
+            <div class="placeholder-icon">🎯</div>
+            <p>Your bias analysis report will appear here after you paste a resume and click Analyze.</p>
+          </div>
+
+          <!-- Results (hidden until analysis) -->
+          <div class="results-content hidden" id="results-content">
+            <!-- Fairness Score -->
+            <div class="score-section" id="score-section">
+              <div class="score-display">
+                <div class="big-score-ring">
+                  <svg width="140" height="140" viewBox="0 0 140 140">
+                    <circle cx="70" cy="70" r="58" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="12"/>
+                    <circle id="main-score-circle" cx="70" cy="70" r="58" fill="none" stroke="url(#mainGrad)" stroke-width="12"
+                      stroke-linecap="round" stroke-dasharray="364" stroke-dashoffset="364"
+                      transform="rotate(-90 70 70)" style="transition: stroke-dashoffset 1.5s ease"/>
+                    <defs>
+                      <linearGradient id="mainGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#7c3aed"/>
+                        <stop offset="100%" stop-color="#06b6d4"/>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  <div class="big-score-inner">
+                    <span class="big-score-num" id="big-score-num">--</span>
+                    <span class="big-score-label">Fairness Score</span>
+                  </div>
+                </div>
+                <div class="score-meta">
+                  <div class="score-verdict" id="score-verdict"></div>
+                  <p class="score-explain" id="score-explain"></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bias Breakdown -->
+            <div class="breakdown-section" id="breakdown-section">
+              <h3 class="breakdown-title">Bias Breakdown</h3>
+              <div id="breakdown-bars"></div>
+            </div>
+
+            <!-- Issues Found -->
+            <div class="issues-section" id="issues-section">
+              <h3 class="issues-title">Issues Found</h3>
+              <div id="issues-list"></div>
+            </div>
+
+            <!-- Suggestions -->
+            <div class="suggestions-section" id="suggestions-section">
+              <h3 class="suggestions-title">✨ Suggestions to Improve</h3>
+              <div id="suggestions-list"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── TECH STACK ───────── -->
+  <section class="section tech-section" id="tech-stack">
+    <div class="section-inner">
+      <div class="section-label">Architecture</div>
+      <h2 class="section-title">Tech Stack</h2>
+      <div class="tech-grid" id="tech-grid">
+        <div class="tech-card" id="tech1">
+          <div class="tech-icon">🌐</div>
+          <h4>Frontend</h4>
+          <p>HTML5 + CSS3 + Vanilla JS</p>
+        </div>
+        <div class="tech-card" id="tech2">
+          <div class="tech-icon">🐍</div>
+          <h4>Backend</h4>
+          <p>Python / Flask REST API</p>
+        </div>
+        <div class="tech-card" id="tech3">
+          <div class="tech-icon">🤖</div>
+          <h4>AI Engine</h4>
+          <p>Google Gemini API</p>
+        </div>
+        <div class="tech-card" id="tech4">
+          <div class="tech-icon">☁️</div>
+          <h4>Hosting</h4>
+          <p>Firebase / Google Cloud Run</p>
+        </div>
+        <div class="tech-card" id="tech5">
+          <div class="tech-icon">🔬</div>
+          <h4>NLP</h4>
+          <p>Rule-based + Semantic Analysis</p>
+        </div>
+        <div class="tech-card" id="tech6">
+          <div class="tech-icon">📊</div>
+          <h4>Scoring</h4>
+          <p>Weighted Fairness Algorithm</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── FOOTER ───────── -->
+  <footer class="footer" id="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <div class="logo-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span>FairHire<span class="logo-ai">AI</span></span>
+        </div>
+        <p>Promoting equitable hiring through transparent AI.</p>
+      </div>
+      <div class="footer-links">
+        <span>Built for Hack2Skill Solution Challenge 2026</span>
+        <span class="footer-sep">•</span>
+        <span>Unbiased AI Decision Theme</span>
+        <span class="footer-sep">•</span>
+        <span>Powered by Google Gemini AI</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
